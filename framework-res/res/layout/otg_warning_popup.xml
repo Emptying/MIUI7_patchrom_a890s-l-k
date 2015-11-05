@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0dip" android:id="@id/otg_summary" android:paddingLeft="15.0dip" android:paddingTop="10.0dip" android:paddingRight="15.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lineSpacingExtra="2.0dip" />
+    <ImageView android:id="@id/otg_divider" android:background="@drawable/pt_list_divider_holo_light" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/otg_summary" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@drawable/pt_list_divider_holo_light" android:layout_below="@id/otg_divider" android:measureWithLargestChild="true" android:showDividers="middle" android:dividerPadding="0.0dip" style="?android:attr/buttonBarStyle">
+        <Button android:textSize="17.0sp" android:id="@id/otg_ok_button" android:background="@drawable/pt_btn_dialog_holo_light" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/alert_dialog_button_bar_height" android:text="@string/otg_confirm" android:maxLines="2" android:layout_weight="1.0" sytle="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+</RelativeLayout>

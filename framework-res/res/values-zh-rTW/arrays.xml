@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>家庭</item>
+        <item>工作</item>
+        <item>其他</item>
+        <item>自定義</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>雅虎</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>工作</item>
+        <item>其他</item>
+        <item>自定義</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>住宅</item>
+        <item>手機</item>
+        <item>工作電話</item>
+        <item>工作傳真</item>
+        <item>住宅傳真</item>
+        <item>傳呼機</item>
+        <item>其他</item>
+        <item>自定義</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>住宅</item>
+        <item>工作</item>
+        <item>其他</item>
+        <item>自定義</item>
+    </string-array>
+    <string-array name="special_locale_codes">
+        <item>zh_CN</item>
+        <item>zh_TW</item>
+    </string-array>
+    <string-array name="special_locale_names">
+        <item>中文 (簡體)</item>
+        <item>中文 (繁體)</item>
+    </string-array>
+    <string-array name="app_ops_labels">
+        <item>嘗試訪問位置</item>
+        <item>嘗試訪問位置</item>
+        <item>嘗試訪問位置</item>
+        <item>嘗試使用震動</item>
+        <item>嘗試讀取聯系人</item>
+        <item>嘗試修改聯系人</item>
+        <item>嘗試讀取通話記錄</item>
+        <item>嘗試修改通話記錄</item>
+        <item>嘗試讀取日歷</item>
+        <item>嘗試修改日歷</item>
+        <item>嘗試訪問位置</item>
+        <item>嘗試後通知</item>
+        <item>嘗試訪問位置</item>
+        <item>嘗試使用電話</item>
+        <item>嘗試讀取短信</item>
+        <item>嘗試編寫/修改短信</item>
+        <item>嘗試接收短信</item>
+        <item>嘗試接收短信</item>
+        <item>嘗試接收短信</item>
+        <item>嘗試接收短信</item>
+        <item>嘗試發送短信</item>
+        <item>嘗試讀取短信</item>
+        <item>嘗試編寫/修改短信</item>
+        <item>嘗試修改設置</item>
+        <item>嘗試頂部繪制</item>
+        <item>嘗試訪問通知</item>
+        <item>嘗試訪問攝像頭</item>
+        <item>嘗試錄制音頻</item>
+        <item>嘗試播放音頻</item>
+        <item>嘗試讀取剪貼板</item>
+        <item>嘗試修改剪貼板</item>
+        <item>嘗試使用多媒體按鍵</item>
+        <item>嘗試使用音頻焦點</item>
+        <item>嘗試使用主音量</item>
+        <item>嘗試使用語音音量</item>
+        <item>嘗試使用鈴聲音量</item>
+        <item>嘗試使用媒體音量</item>
+        <item>嘗試使用報警音量</item>
+        <item>嘗試使用通知音量</item>
+        <item>嘗試使用藍牙</item>
+        <item>嘗試保持喚醒設備</item>
+        <item>嘗試訪問位置</item>
+        <item>嘗試訪問位置</item>
+        <item>嘗試打開/關閉WiFi</item>
+        <item>嘗試打開/關閉藍牙</item>
+        <item>嘗試打開/關閉移動數據</item>
+        <item>嘗試發送彩信</item>
+        <item>嘗試讀取彩信</item>
+        <item>嘗試編寫彩信</item>
+        <item>嘗試在啟動時運行</item>
+    </string-array>
+    <integer-array name="maps_starting_lat_lng">
+        <item>34161818</item>
+        <item>103447266</item>
+    </integer-array>
+    <integer-array name="maps_starting_zoom">
+        <item>3</item>
+    </integer-array>
+    <string-array name="imAddressTypes">
+        <item>家庭</item>
+        <item>工作</item>
+        <item>其他</item>
+        <item>自定義</item>
+    </string-array>
+</resources>

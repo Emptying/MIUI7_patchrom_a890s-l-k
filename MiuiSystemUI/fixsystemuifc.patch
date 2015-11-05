@@ -1,0 +1,238 @@
+diff --git a/MiuiSystemUI/smali/com/android/systemui/statusbar/BaseStatusBar.smali b/MiuiSystemUI/smali/com/android/systemui/statusbar/BaseStatusBar.smali
+index a89a6bd..2ba2469 100644
+--- a/MiuiSystemUI/smali/com/android/systemui/statusbar/BaseStatusBar.smali
++++ b/MiuiSystemUI/smali/com/android/systemui/statusbar/BaseStatusBar.smali
+@@ -3334,3 +3334,19 @@
+     .line 509
+     return-void
+ .end method
++
++.method public aotCloseRecentApps()V
++    .locals 0
++
++    .prologue
++
++    return-void
++.end method
++
++.method public aotToggleRecentApps()V
++    .locals 0
++
++    .prologue
++    return-void
++.end method
++
+diff --git a/MiuiSystemUI/smali/com/android/systemui/statusbar/CommandQueue$Callbacks.smali b/MiuiSystemUI/smali/com/android/systemui/statusbar/CommandQueue$Callbacks.smali
+index 9c09aad..5798743 100644
+--- a/MiuiSystemUI/smali/com/android/systemui/statusbar/CommandQueue$Callbacks.smali
++++ b/MiuiSystemUI/smali/com/android/systemui/statusbar/CommandQueue$Callbacks.smali
+@@ -27,12 +27,33 @@
+ .method public abstract animateExpand()V
+ .end method
+ 
++.method public abstract aotCloseRecentApps()V
++.end method
++
++.method public abstract aotToggleRecentApps()V
++.end method
++
+ .method public abstract cancelPreloadRecentApps()V
+ .end method
+ 
+ .method public abstract disable(I)V
+ .end method
+ 
++.method public abstract disableBlind(Ljava/lang/String;)V
++.end method
++
++.method public abstract enableBlind()V
++.end method
++
++.method public abstract hideBlind(I)V
++.end method
++
++.method public abstract notifyWindowChange(II)V
++.end method
++
++.method public abstract onStatusBarVisibleChanged(Z)V
++.end method
++
+ .method public abstract preloadRecentApps()V
+ .end method
+ 
+@@ -66,6 +87,12 @@
+ .method public abstract toggleRecentApps()V
+ .end method
+ 
++.method public abstract showBlind(I)V
++.end method
++
++.method public abstract toggleStatusBarExpand()V
++.end method
++
+ .method public abstract topAppWindowChanged(Z)V
+ .end method
+ 
+diff --git a/MiuiSystemUI/smali/com/android/systemui/statusbar/CommandQueue.smali b/MiuiSystemUI/smali/com/android/systemui/statusbar/CommandQueue.smali
+index 19ec69e..40b2ce2 100644
+--- a/MiuiSystemUI/smali/com/android/systemui/statusbar/CommandQueue.smali
++++ b/MiuiSystemUI/smali/com/android/systemui/statusbar/CommandQueue.smali
+@@ -1115,3 +1115,90 @@
+ 
+     throw v1
+ .end method
++
++.method public onStatusBarVisibleChanged(Z)V
++    .locals 0
++    .param p1, "visible"    # Z
++
++    .prologue
++    return-void
++.end method
++
++.method public hideBlind(I)V
++    .locals 0
++    .param p1, "animType"    # I
++
++    .prologue
++
++    return-void
++.end method
++
++.method public aotCloseRecentApps()V
++    .locals 0
++
++    .prologue
++    
++    return-void
++.end method
++
++.method public aotToggleRecentApps()V
++    .locals 0
++
++    .prologue
++    
++    return-void
++.end method
++
++.method public disableBlind(Ljava/lang/String;)V
++    .locals 0
++    .param p1, "text"    # Ljava/lang/String;
++
++    .prologue
++    return-void
++.end method
++
++.method public enableBlind()V
++    .locals 0
++
++    .prologue
++    
++    return-void
++.end method
++
++.method public notifyWindowChange(II)V
++    .locals 0
++    .param p1, "state"    # I
++    .param p2, "win"    # I
++
++    .prologue
++
++    return-void
++.end method
++
++.method public showBlind(I)V
++    .locals 0
++    .param p1, "animType"    # I
++
++    .prologue
++
++    return-void
++.end method
++
++.method public toggleStatusBarExpand()V
++    .locals 0
++
++    .prologue
++
++    return-void
++.end method
++
++.method public notifyWindowChange(II)V
++    .locals 0
++    .param p1, "state"    # I
++    .param p2, "win"    # I
++
++    .prologue
++
++    return-void
++.end method
++
+diff --git a/MiuiSystemUI/smali/com/android/systemui/statusbar/phone/PhoneStatusBar.smali b/MiuiSystemUI/smali/com/android/systemui/statusbar/phone/PhoneStatusBar.smali
+index cdce832..686ce8a 100644
+--- a/MiuiSystemUI/smali/com/android/systemui/statusbar/phone/PhoneStatusBar.smali
++++ b/MiuiSystemUI/smali/com/android/systemui/statusbar/phone/PhoneStatusBar.smali
+@@ -17730,3 +17730,63 @@
+     .line 4660
+     return-void
+ .end method
++
++.method public onStatusBarVisibleChanged(Z)V
++    .locals 0
++    .param p1, "visible"    # Z
++
++    .prologue
++
++    return-void
++.end method
++
++.method public hideBlind(I)V
++    .locals 0
++    .param p1, "animType"    # I
++
++    .prologue
++    return-void
++.end method
++
++.method public disableBlind(Ljava/lang/String;)V
++    .locals 0
++    .param p1, "text"    # Ljava/lang/String;
++
++    .prologue
++
++    return-void
++.end method
++
++.method public enableBlind()V
++    .locals 0
++
++    .prologue
++
++    return-void
++.end method
++
++.method public notifyWindowChange(II)V
++    .locals 0
++
++    .prologue
++
++    return-void
++.end method
++
++.method public showBlind(I)V
++    .locals 0
++    .param p1, "animType"    # I
++
++    .prologue
++
++    return-void
++.end method
++
++.method public toggleStatusBarExpand()V
++    .locals 0
++
++    .prologue
++
++    return-void
++.end method
++

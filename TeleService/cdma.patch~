@@ -1,0 +1,63 @@
+From 401d11928c5b31c7fd54ca9416ac44742ccb8267 Mon Sep 17 00:00:00 2001
+From: wangtongli <276792882@qq.com>
+Date: Sun, 17 May 2015 17:23:19 +0800
+Subject: [PATCH] fix cdma
+
+---
+ TeleService/res/xml/network_type.xml                           |  2 +-
+ TeleService/res/xml/preferred_network_type_lte_x5.xml          | 10 +++++++---
+ .../phone/settings/PreferredNetworkTypeListPreference.smali    |  4 ++--
+ 3 files changed, 10 insertions(+), 6 deletions(-)
+
+--- a/TeleService/res/xml/network_type.xml
++++ b/TeleService/res/xml/network_type.xml
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <PreferenceScreen android:title="@string/preferred_network_type_title" android:key="network_type_setting"
+   xmlns:android="http://schemas.android.com/apk/res/android">
+-    <miui.preference.RadioButtonPreference android:title="@string/preferred_network_type_pref_entries_global" android:key="7" />
++    <miui.preference.RadioButtonPreference android:title="@string/preferred_network_type_pref_entries_global" android:key="22" />
+     <miui.preference.RadioButtonPreferenceCategory android:title="@string/preferred_network_type_cdma" android:key="network_type_list_cdma">
+         <miui.preference.RadioButtonPreference android:title="@string/preferred_network_type_pref_entries_auto" android:key="4" />
+     </miui.preference.RadioButtonPreferenceCategory>
+--- a/TeleService/res/xml/preferred_network_type_lte_x5.xml
++++ b/TeleService/res/xml/preferred_network_type_lte_x5.xml
+@@ -1,7 +1,11 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <PreferenceScreen android:key="network_type_list_gsm_umts"
+   xmlns:android="http://schemas.android.com/apk/res/android">
+-    <miui.preference.RadioButtonPreference android:title="@string/preferred_network_type_pref_entries_4g_preferred" android:key="20" />
+-    <miui.preference.RadioButtonPreference android:title="@string/preferred_network_type_pref_entries_3g_preferred" android:key="18" />
+-    <miui.preference.RadioButtonPreference android:title="@string/preferred_network_type_pref_entries_only_2g" android:key="1" />
++   <miui.preference.RadioButtonPreferenceCategory android:title="联通移动首选项">
++       <miui.preference.RadioButtonPreference android:title="@string/preferred_network_type_pref_entries_4g_preferred" android:key="20" />
++       <miui.preference.RadioButtonPreference android:title="@string/preferred_network_type_pref_entries_3g_preferred" android:key="18" />
++       <miui.preference.RadioButtonPreference android:title="仅使用移动3G" android:key="13" />
++       <miui.preference.RadioButtonPreference android:title="仅使用联通3G" android:key="2" />
++       <miui.preference.RadioButtonPreference android:title="@string/preferred_network_type_pref_entries_only_2g" android:key="1" />
++   </miui.preference.RadioButtonPreferenceCategory>
+ </PreferenceScreen>
+\ 文件尾没有 newline 字符
+--- a/TeleService/smali/com/android/phone/settings/PreferredNetworkTypeListPreference.smali
++++ b/TeleService/smali/com/android/phone/settings/PreferredNetworkTypeListPreference.smali
+@@ -641,7 +641,7 @@
+ 
+     const-string v4, "network_type_list_cdma"
+ 
+-    invoke-static {v3, v4}, Lcom/android/phone/CallFeaturesSetting;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
++    #invoke-static {v3, v4}, Lcom/android/phone/CallFeaturesSetting;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
+ 
+     const v3, 0x7f050022
+ 
+@@ -725,7 +725,7 @@
+ 
+     const-string v4, "network_type_list_cdma"
+ 
+-    invoke-static {v3, v4}, Lcom/android/phone/CallFeaturesSetting;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
++   # invoke-static {v3, v4}, Lcom/android/phone/CallFeaturesSetting;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
+ 
+     const/4 v3, 0x2
+ 
+-- 
+1.9.1
+

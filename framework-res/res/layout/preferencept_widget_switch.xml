@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Switch android:layout_gravity="center" android:id="@id/switchWidget" android:padding="16.0dip" android:focusable="false" android:layout_width="51.0dip" android:layout_height="41.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

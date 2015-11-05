@@ -1,0 +1,130 @@
+diff --git a/TeleService/AndroidManifest.xml b/TeleService/AndroidManifest.xml
+index bd5d8ef..b1f2776 100644
+--- a/TeleService/AndroidManifest.xml
++++ b/TeleService/AndroidManifest.xml
+@@ -68,6 +68,8 @@
+     <uses-permission android:name="android.permission.MANAGE_USERS"/>
+     <uses-permission android:name="android.permission.UPDATE_APP_OPS_STATS"/>
+     <uses-permission android:name="android.permission.CONNECTIVITY_INTERNAL"/>
++    <uses-permission android:name="com.lge.permission.LGHIDDEN"/>
++    <uses-permission android:name="android.permission.ACCESS_LGDRM"/>
+     <uses-permission android:name="android.permission.SET_PREFERRED_APPLICATIONS"/>
+     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     <uses-permission android:name="miui.permission.USE_INTERNAL_GENERAL_API"/>
+diff --git a/TeleService/smali/com/android/phone/DefaultPhoneInterfaceManager.smali b/TeleService/smali/com/android/phone/DefaultPhoneInterfaceManager.smali
+index fcb2980..1c1f9c3 100644
+--- a/TeleService/smali/com/android/phone/DefaultPhoneInterfaceManager.smali
++++ b/TeleService/smali/com/android/phone/DefaultPhoneInterfaceManager.smali
+@@ -844,6 +844,15 @@
+     return v0
+ .end method
+ 
++.method public isBluetoothAudioOn()Z
++    .locals 1
++
++    .prologue
++    const/4 v0, 0x0
++
++    return v0
++.end method
++
+ .method public isDataConnectivityPossible()Z
+     .locals 1
+ 
+@@ -868,6 +877,15 @@
+     return v0
+ .end method
+ 
++.method public isHeadsetPlugged()Z
++    .locals 1
++
++    .prologue
++    const/4 v0, 0x0
++
++    return v0
++.end method
++
+ .method public isIdle()Z
+     .locals 1
+ 
+@@ -962,6 +980,15 @@
+     goto :goto_1
+ .end method
+ 
++.method public isReservedCall()Z
++    .locals 1
++
++    .prologue
++    const/4 v0, 0x0
++
++    return v0
++.end method
++
+ .method public isRinging()Z
+     .locals 2
+ 
+diff --git a/TeleService/smali/com/android/phone/PhoneGlobals.smali b/TeleService/smali/com/android/phone/PhoneGlobals.smali
+index 58c288e..751b866 100644
+--- a/TeleService/smali/com/android/phone/PhoneGlobals.smali
++++ b/TeleService/smali/com/android/phone/PhoneGlobals.smali
+@@ -2292,7 +2292,7 @@
+ 
+     const/4 v2, 0x3
+ 
+-    invoke-interface {v0, v1, v2, v10}, Lcom/android/internal/telephony/IccCard;->registerForNetworkLocked(Landroid/os/Handler;ILjava/lang/Object;)V
++    invoke-interface {v0, v1, v2, v10}, Lcom/android/internal/telephony/IccCard;->registerForPersoLocked(Landroid/os/Handler;ILjava/lang/Object;)V
+ 
+     .line 591
+     :cond_2
+diff --git a/TeleService/smali/com/android/phone/PhoneInterfaceManager.smali b/TeleService/smali/com/android/phone/PhoneInterfaceManager.smali
+index b093006..ed09fcb 100644
+--- a/TeleService/smali/com/android/phone/PhoneInterfaceManager.smali
++++ b/TeleService/smali/com/android/phone/PhoneInterfaceManager.smali
+@@ -2355,6 +2355,15 @@
+     return v0
+ .end method
+ 
++.method public isBluetoothAudioOn()Z
++    .locals 1
++
++    .prologue
++    const/4 v0, 0x0
++
++    return v0
++.end method
++
+ .method public isDataConnectivityPossible()Z
+     .locals 1
+ 
+@@ -2369,6 +2378,15 @@
+     return v0
+ .end method
+ 
++.method public isHeadsetPlugged()Z
++    .locals 1
++
++    .prologue
++    const/4 v0, 0x0
++
++    return v0
++.end method
++
+ .method public isIdle()Z
+     .locals 2
+ 
+@@ -2431,6 +2449,15 @@
+     return v0
+ .end method
+ 
++.method public isReservedCall()Z
++    .locals 1
++
++    .prologue
++    const/4 v0, 0x0
++
++    return v0
++.end method
++
+ .method public isRinging()Z
+     .locals 2
+ 

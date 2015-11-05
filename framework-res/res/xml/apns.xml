@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<apns version="8">
+    <apn carrier="KT" mcc="450" mnc="08" apn="lte150.ktfwing.com" user="none" server="*" password="none" type="default,hipri,supl" mmsc="http://mmsc.ktfwing.com:9082" protocol="IP" />
+    <apn carrier="KT" mcc="450" mnc="02" apn="lte150.ktfwing.com" user="none" server="*" password="none" type="default,hipri,supl" mmsc="http://mmsc.ktfwing.com:9082" protocol="IP" />
+    <apn carrier="KT(IMS)" mcc="450" mnc="08" apn="ims.ktfwing.com" user="none" server="*" password="none" type="ims,mms" mmsc="http://mmsc.ktfwing.com:9082" protocol="IP" />
+    <apn carrier="KT(IMS)" mcc="450" mnc="02" apn="ims.ktfwing.com" user="none" server="*" password="none" type="ims,mms" mmsc="http://mmsc.ktfwing.com:9082" protocol="IP" />
+    <apn carrier="SKTELECOM(LTE)" mcc="450" mnc="05" apn="lte.sktelecom.com" user="none" server="*" password="none" mmsport="9093" mmsproxy="smart.nate.com" mmsc="http://omms.nate.com:9082/oma_mms" protocol="IP" />
+    <apn carrier="SKTELECOM(3G)" mcc="450" mnc="05" apn="web.sktelecom.com" user="none" server="*" password="none" mmsport="9093" mmsproxy="smart.nate.com" mmsc="http://omms.nate.com:9082/oma_mms" protocol="IP" />
+    <apn carrier="SKTELECOM ROAMING(3G)" mcc="450" mnc="05" apn="roaming.sktelecom.com" user="none" server="*" password="none" mmsport="9093" mmsproxy="smart.nate.com" mmsc="http://omms.nate.com:9082/oma_mms" protocol="IP" />
+    <apn carrier="SKTELECOM ROAMING(LTE)" mcc="450" mnc="05" apn="lte-roaming.sktelecom.com" user="none" server="*" password="none" mmsport="9093" mmsproxy="smart.nate.com" mmsc="http://omms.nate.com:9082/oma_mms" protocol="IP" />
+    <apn carrier="KCT(LTE)" mcc="450" mnc="11" apn="lte.sktelecom.com" user="none" server="*" password="none" mmsport="9093" mmsproxy="smart.nate.com" mmsc="http://omms.nate.com:9082/oma_mms" protocol="IP" />
+    <apn carrier="KCT(3G)" mcc="450" mnc="11" apn="web.sktelecom.com" user="none" server="*" password="none" mmsport="9093" mmsproxy="smart.nate.com" mmsc="http://omms.nate.com:9082/oma_mms" protocol="IP" />
+    <apn carrier="KCT ROAMING" mcc="450" mnc="11" apn="roaming.sktelecom.com" user="none" server="*" password="none" mmsport="9093" mmsproxy="smart.nate.com" mmsc="http://omms.nate.com:9082/oma_mms" protocol="IP" />
+    <apn carrier="LGU+  " mcc="450" mnc="06" apn="sinternet.lguplus.co.kr" user="*" server="*" password="*" mmsc="http://omammsc.uplus.co.kr:9084" type="*" protocol="IP" bearer="0" />
+    <apn carrier="LGU+ Roaming" mcc="450" mnc="06" apn="wroaming.lguplus.co.kr" user="*" server="*" password="*" mmsc="http://omammsc.uplus.co.kr:9084" type="*" carrier_enabled="0" protocol="IP" roaming_protocol="IP" bearer="0" />
+    <apn carrier="LGU+ LTE Roaming" mcc="450" mnc="06" apn="lte-roaming.lguplus.co.kr" user="*" server="*" password="*" mmsc="http://omammsc.uplus.co.kr:9084" type="*" carrier_enabled="0" protocol="IP" roaming_protocol="IP" bearer="0" />
+</apns>

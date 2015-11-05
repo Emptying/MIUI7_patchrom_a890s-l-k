@@ -1,0 +1,23 @@
+From db27828c6de2f4b2c1e0c6f883c4b4714745f431 Mon Sep 17 00:00:00 2001
+From: wangtongli <276792882@qq.com>
+Date: Thu, 21 May 2015 21:40:01 +0800
+Subject: [PATCH] fix permission
+
+---
+ services/smali/com/android/server/AppOpsService.smali | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/services/smali/com/android/server/AppOpsService.smali
++++ b/services/smali/com/android/server/AppOpsService.smali
+@@ -4374,7 +4374,7 @@
+ 
+     if-eqz p1, :cond_0
+ 
+-    iput-object p1, p0, Lcom/android/server/AppOpsService;->mCallbackBinder:Lcom/android/internal/app/IOpsCallback;
++    #iput-object p1, p0, Lcom/android/server/AppOpsService;->mCallbackBinder:Lcom/android/internal/app/IOpsCallback;
+ 
+     const/4 v0, 0x0
+ 
+-- 
+1.9.1
+
